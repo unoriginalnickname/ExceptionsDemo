@@ -1,4 +1,4 @@
-﻿namespace ExceptionsDemo
+namespace ExceptionsDemo
 {
     internal class Program
     {
@@ -15,6 +15,10 @@
                     var result = ProcessFile(path);
 
                     Console.WriteLine($"\nResultat: {result}");
+                    if (true)
+                    {
+                        Console.WriteLine($"\nResultat: {result}");
+                    }
                 }
                 catch (FileNotFoundException ex)
                 {
@@ -107,4 +111,3 @@
 
     }
 }
-
