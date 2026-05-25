@@ -13,7 +13,7 @@
                     Console.WriteLine("Försöker läsa fil och räkna...");
                     var path = Path.Combine(AppContext.BaseDirectory, "numbers.txt");
                     var result = ProcessFile(path);
-                  
+
                     Console.WriteLine($"\nResultat: {result}");
                 }
                 catch (FileNotFoundException ex)
@@ -29,7 +29,7 @@
                 catch (DivideByZeroException ex)
                 {
                     // Specifikt fel om nolldivision
-                    Console.WriteLine($"Kan inte dividera med noll: {ex.Message}");
+                    Console.WriteLine($"Kan inte dividera med troll: {ex.Message}");
                 }
                 catch (Exception ex)
                 {
@@ -93,6 +93,18 @@
                 }
             }
         }
+
+
+
+        public static string LogData(string input)
+        {
+            Handler.LogAllData(input);
+
+            string values = processValuesForRevenue();
+
+            return values;
+        }
+
     }
 }
 
