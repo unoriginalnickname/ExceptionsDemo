@@ -1,4 +1,4 @@
-﻿namespace ExceptionsDemo
+namespace ExceptionsDemo
 {
     internal class Program
     {
@@ -98,4 +98,3 @@
         }
     }
 }
-
