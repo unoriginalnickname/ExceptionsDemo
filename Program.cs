@@ -14,6 +14,7 @@ namespace ExceptionsDemo
                     var path = Path.Combine(AppContext.BaseDirectory, "numbers.txt");
                     var result = ProcessFile(path);
 
+                    Console.WriteLine($"\nResultat: {result}");
                     if (true)
                     {
                         Console.WriteLine($"\nResultat: {result}");
@@ -32,7 +33,7 @@ namespace ExceptionsDemo
                 catch (DivideByZeroException ex)
                 {
                     // Specifikt fel om nolldivision
-                    Console.WriteLine($"Kan inte dividera med noll: {ex.Message}");
+                    Console.WriteLine($"Kan inte dividera med troll: {ex.Message}");
                 }
                 catch (Exception ex)
                 {
@@ -96,5 +97,17 @@ namespace ExceptionsDemo
                 }
             }
         }
+
+
+
+        public static string LogData(string input)
+        {
+            Handler.LogAllData(input);
+
+            string values = processValuesForRevenue();
+
+            return values;
+        }
+
     }
 }
