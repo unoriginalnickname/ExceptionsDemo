@@ -5,7 +5,9 @@ namespace ExceptionsDemo
         static void Main(string[] args)
         {
             {
+								Console.WriteLine("***************************");
                 Console.WriteLine("=== Start av programmet ===");
+								Console.WriteLine("***************************");
 
                 // Exempel 1: try-catch-finally
                 try
@@ -13,6 +15,8 @@ namespace ExceptionsDemo
                     Console.WriteLine("Försöker läsa fil och räkna...");
                     var path = Path.Combine(AppContext.BaseDirectory, "numbers.txt");
                     var result = ProcessFile(path);
+                  
+                    Console.WriteLine($"\nResultat: {result}");
 
                     Console.WriteLine($"\nResultat: {result}");
                     if (true)
@@ -23,7 +27,9 @@ namespace ExceptionsDemo
                 catch (FileNotFoundException ex)
                 {
                     // Specifikt fel om filen inte finns
+										Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Filen hittades inte: {ex.Message}");
+										Console.ResetColor();
                 }
                 catch (FormatException ex)
                 {
@@ -43,7 +49,9 @@ namespace ExceptionsDemo
                 finally
                 {
                     // Körs ALLTID, även om det blev undantag
+										Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Cleanup: Logging avslutat anrop.");
+										Console.ResetColor();
                 }
 
                 Console.WriteLine("Programmet avslutas normalt.");
